@@ -24,6 +24,7 @@
     "bundle": "npm run build && pkg . --out-dir ./exec/"
   },
   "devDependencies": {
+    "@types/node": "^18.11.9",
     "ava": "^2.2.0",
     "pkg": "^4.4.0",
     "rimraf": "^2.6.3",
@@ -31,6 +32,8 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "commander": "^2.20.0"
+    "@noble/ed25519": "^1.7.1",
+    "commander": "^2.20.0",
+    "did-jwt": "^6.9.0"
   }
 }

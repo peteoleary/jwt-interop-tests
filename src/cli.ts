@@ -2,19 +2,13 @@
 
 import program from 'commander'
 
-import { orderPizza } from './index'
+import { handleCommand } from './index'
  
 program
   .version('0.1.0')
-  .option('-p, --peppers', 'Add peppers')
-  .option('-P, --pineapple', 'Add pineapple')
-  .option('-b, --bbq-sauce', 'Add bbq sauce')
-  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
+  .option('-k, --keyFile <path>', 'Key file path')
   .parse(process.argv)
 
-orderPizza({
-  peppers: program.peppers,
-  pineapple: program.pineapple,
-  bbqSauce: program.bbqSauce,
-  cheeseType: program.cheese
-}).then(result => console.log(result.message))
+handleCommand({
+  keyFile: program.keyFile
+}).then(result => console.log(result.messageString))
