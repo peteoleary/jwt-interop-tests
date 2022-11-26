@@ -1,4 +1,24 @@
-# typescript-cli-starter
+# JWT-interop-tests
+
+Brings together several different JWT and JWS pacakges to test interoperatbility between them
+
+
+## JWK generation
+
+The Public/private keypair used for testing was generated using DIDKit inside of https://github.com/learningeconomy/LearnCard/tree/9e2b23dbd93391ee9d899a5797508c5c03caee48/packages/learn-card-core/src/wallet/plugins/didkit
+
+## DID-JWT
+
+Some tests were done with ​​https://github.com/decentralized-identity/did-jwt which depends on @stablelib/ed25519. NOTE: this didn't work as did-jwt EdDSASigner takes a 64-bit private key as input and keys are all 32 bit
+
+## Noble-ED25529
+
+Interoperability was desired with https://github.com/WeLibraryOS/dwn-express-js/blob/488dcfe12758355bc31a7b3c3c34a655793327d6/source/dwn-sdk/jose/algorithms/signing/ed25519.ts#L25
+
+Which ultimately uses https://github.com/paulmillr/noble-ed25519
+
+
+## Project based on typescript-cli-starter
 
 A simple and zero-opinion typescript starter template for building cross-platform command line applications.
 
